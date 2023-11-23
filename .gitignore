@@ -1,0 +1,5 @@
+.DS_Store
+*.yml
+.vscode/
+.idea/
+.build/

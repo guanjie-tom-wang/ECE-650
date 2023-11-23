@@ -1,0 +1,4 @@
+/home/t73wang/t73wang/a2/build/CMakeFiles/ece650-a2.dir
+/home/t73wang/t73wang/a2/build/CMakeFiles/tests.dir
+/home/t73wang/t73wang/a2/build/CMakeFiles/edit_cache.dir
+/home/t73wang/t73wang/a2/build/CMakeFiles/rebuild_cache.dir

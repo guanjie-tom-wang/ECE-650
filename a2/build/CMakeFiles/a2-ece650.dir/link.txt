@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++11 -Wall  -rdynamic "CMakeFiles/a2-ece650.dir/ece650-a2.cpp.o" "CMakeFiles/a2-ece650.dir/graph.cpp.o" -o a2-ece650 

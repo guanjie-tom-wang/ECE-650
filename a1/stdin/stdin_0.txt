@@ -1,0 +1,31 @@
+add"1 street"(1,1)(2,2)(3,3)(4,4) 
+add "2 street" (1,1) (2,2) (3,3) (4,4) 
+add "3 street" (1,1) (2,2) (3,3) (4,4 
+add "4 street" (1,1) (2,2) (3,3) (44) 
+add "5 street" (1,1) (2,2) (3,3) (4,4,4) 
+add "6 street (1 ,1) ( 2,2) (3,3 ) (4, 4) 
+add "7 street" (1,-1) (-2,2) (+3,3) (4,+4) 
+add "8 street" (1,1a) (2,2) (3,3) (4,4) 
+add "9 street"  
+add (1,1) (2,2) (3,3) (4,4) "10 street" 
+add "11 street" (1,1) 
+add "12 street" 1 
+add "13 street" (1,1) (1,1) 
+ad "14 street" (1,1) (2,2) (3,3) (4,4) 
+add "15 street" (1， 1) (2， 2) (3， 3) (4， 4) 
+add "16 street" (1 
+add "17 #street" (1,1) (2,2) (3,3) (4,4) 
+  add   "18 #street"   (1,1)   (2,2)   (3,3)   (4,4)  
+add "19 street (1,1) (2,2) (3,3) (4,4)" 
+add " 20 street " (1,1) (2,2) (3,3) (4,4) 
+mod "1 street" (1,1) (2,2)
+mod "0 street" (1,1) (2,2)
+mod "1 street" 
+rm "1 street" (1,1) (2,2)
+rm "0 street"
+rm "0 street" (1,1) (2,2)
+rm "0 street
+gg 1
+gg "1 street"
+  gg  
+g g
