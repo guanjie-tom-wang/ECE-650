@@ -1,0 +1,321 @@
+Marking #81: StudentInfo(repo='t73wang', first='Guanjie', last='Wang', watiam='t73wang', studentid=21054820, email='t73wang@uwaterloo.ca')
+Mark = 0
+
+Running test 0:	 +20
+
+
+--------------
+Running test: tests_a2/test01.in
+
+# test1.in: expect a line of error message, because vertex id go beyond range.
+# marks = 5
+
+V 5
+E {<3,4>,<4,6>}
+
+Output:
+----
+Error: start node and end node must be smaller than the input vertices
+
+=================================================================
+==2816460==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7f5f4351c587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x5627de6aabaf in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x175baf)
+    #2 0x7f5f42586082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 24120 byte(s) in 1 object(s) allocated from:
+    #0 0x7f5f4351c587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x5627de792869 in __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d869)
+    #2 0x5627de790a21 in std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25ba21)
+    #3 0x5627de78e5d7 in std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2595d7)
+    #4 0x5627de78bbc8 in std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x256bc8)
+    #5 0x5627de787f0b in std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x252f0b)
+    #6 0x5627de78613e in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25113e)
+    #7 0x5627de7831fd in Graph::Graph(int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24e1fd)
+    #8 0x5627de6aabe4 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x175be4)
+    #9 0x7f5f42586082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 8 byte(s) in 1 object(s) allocated from:
+    #0 0x7f5f4351c587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x5627de7925b2 in __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d5b2)
+    #2 0x5627de790376 in std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25b376)
+    #3 0x5627de78dd7b in std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x258d7b)
+    #4 0x5627de78abbb in void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x255bbb)
+    #5 0x5627de7878b7 in std::vector<int, std::allocator<int> >::push_back(int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2528b7)
+    #6 0x5627de784916 in Graph::addEdge(int, int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24f916)
+    #7 0x5627de6abad2 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x176ad2)
+    #8 0x7f5f42586082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 8 byte(s) in 1 object(s) allocated from:
+    #0 0x7f5f4351c587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x5627de7925b2 in __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d5b2)
+    #2 0x5627de790376 in std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25b376)
+    #3 0x5627de78dd7b in std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x258d7b)
+    #4 0x5627de78abbb in void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x255bbb)
+    #5 0x5627de7878b7 in std::vector<int, std::allocator<int> >::push_back(int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2528b7)
+    #6 0x5627de784851 in Graph::addEdge(int, int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24f851)
+    #7 0x5627de6abad2 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x176ad2)
+    #8 0x7f5f42586082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 24168 byte(s) leaked in 4 allocation(s).
+----
+
+Expected result:
+----
+Error: Invalid vertice: 6
+----
+
+Marks: +0	(20 total)
+
+--------------
+Running test: tests_a2/test02.in
+
+# test2.in: expect a line of error message, because no path between the two vertices.
+# marks = 5
+
+V 7
+E {<1,2>,<2,3>,<3,4>,<3,5>}
+s 1 6 
+
+Output:
+----
+Error: input format error
+
+=================================================================
+==2816462==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7f263c390587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x55733b670baf in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x175baf)
+    #2 0x7f263b3fa082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 24168 byte(s) in 1 object(s) allocated from:
+    #0 0x7f263c390587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x55733b758869 in __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d869)
+    #2 0x55733b756a21 in std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25ba21)
+    #3 0x55733b7545d7 in std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2595d7)
+    #4 0x55733b751bc8 in std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x256bc8)
+    #5 0x55733b74df0b in std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x252f0b)
+    #6 0x55733b74c13e in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25113e)
+    #7 0x55733b7491fd in Graph::Graph(int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24e1fd)
+    #8 0x55733b670be4 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x175be4)
+    #9 0x7f263b3fa082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 48 byte(s) in 2 object(s) allocated from:
+    #0 0x7f263c390587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x55733b7585b2 in __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d5b2)
+    #2 0x55733b756376 in std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25b376)
+    #3 0x55733b753d7b in std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x258d7b)
+    #4 0x55733b750bbb in void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x255bbb)
+    #5 0x55733b74d8b7 in std::vector<int, std::allocator<int> >::push_back(int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2528b7)
+    #6 0x55733b74a851 in Graph::addEdge(int, int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24f851)
+    #7 0x55733b671a93 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x176a93)
+    #8 0x7f263b3fa082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 16 byte(s) in 2 object(s) allocated from:
+    #0 0x7f263c390587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x55733b7585b2 in __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d5b2)
+    #2 0x55733b756376 in std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25b376)
+    #3 0x55733b753d7b in std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x258d7b)
+    #4 0x55733b750bbb in void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x255bbb)
+    #5 0x55733b74d8b7 in std::vector<int, std::allocator<int> >::push_back(int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2528b7)
+    #6 0x55733b74a851 in Graph::addEdge(int, int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24f851)
+    #7 0x55733b671ad2 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x176ad2)
+    #8 0x7f263b3fa082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 8 byte(s) in 1 object(s) allocated from:
+    #0 0x7f263c390587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x55733b7585b2 in __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d5b2)
+    #2 0x55733b756376 in std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25b376)
+    #3 0x55733b753d7b in std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x258d7b)
+    #4 0x55733b750bbb in void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x255bbb)
+    #5 0x55733b74d8b7 in std::vector<int, std::allocator<int> >::push_back(int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2528b7)
+    #6 0x55733b74a916 in Graph::addEdge(int, int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24f916)
+    #7 0x55733b671ad2 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x176ad2)
+    #8 0x7f263b3fa082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 24272 byte(s) leaked in 7 allocation(s).
+----
+
+Expected result:
+----
+Error: No path between given vertices!
+----
+
+Marks: +0	(20 total)
+
+--------------
+Running test: tests_a2/test03.in
+
+# test3.in: expect a line of error message, because no path between the two vertices.
+# marks = 5
+
+V 9
+E {<1,2>,<3,4>,<5,6>,<7,8>,<2,4>}
+s 1 8
+
+Output:
+----
+/usr/include/c++/9/bits/stl_vector.h:1043:34: runtime error: reference binding to null pointer of type 'value_type'
+/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/ece650-a2.cpp:151:48: runtime error: load of null pointer of type 'value_type'
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==2816464==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x558b337a7a47 bp 0x7ffc95021f50 sp 0x7ffc95021750 T0)
+==2816464==The signal is caused by a READ memory access.
+==2816464==Hint: address points to the zero page.
+    #0 0x558b337a7a46 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x177a46)
+    #1 0x7f9ecf91f082 in __libc_start_main ../csu/libc-start.c:308
+    #2 0x558b337a526d in _start (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x17526d)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x177a46) in main
+==2816464==ABORTING
+----
+
+Expected result:
+----
+Error: No path between given vertices!
+----
+
+Marks: +0	(20 total)
+
+--------------
+Running test: tests_a2/test04.in
+
+# test4.in: expect a line of error message, because vertex id go beyond range.
+# marks = 5
+
+V 5
+E {<3,4>,<4,6>}
+
+Output:
+----
+Error: start node and end node must be smaller than the input vertices
+
+=================================================================
+==2816465==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 32 byte(s) in 1 object(s) allocated from:
+    #0 0x7ff592279587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x55779182dbaf in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x175baf)
+    #2 0x7ff5912e3082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 24120 byte(s) in 1 object(s) allocated from:
+    #0 0x7ff592279587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x557791915869 in __gnu_cxx::new_allocator<std::vector<int, std::allocator<int> > >::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d869)
+    #2 0x557791913a21 in std::allocator_traits<std::allocator<std::vector<int, std::allocator<int> > > >::allocate(std::allocator<std::vector<int, std::allocator<int> > >&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25ba21)
+    #3 0x5577919115d7 in std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2595d7)
+    #4 0x55779190ebc8 in std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_create_storage(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x256bc8)
+    #5 0x55779190af0b in std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::_Vector_base(unsigned long, std::allocator<std::vector<int, std::allocator<int> > > const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x252f0b)
+    #6 0x55779190913e in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::vector(unsigned long, std::vector<int, std::allocator<int> > const&, std::allocator<std::vector<int, std::allocator<int> > > const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25113e)
+    #7 0x5577919061fd in Graph::Graph(int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24e1fd)
+    #8 0x55779182dbe4 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x175be4)
+    #9 0x7ff5912e3082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 8 byte(s) in 1 object(s) allocated from:
+    #0 0x7ff592279587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x5577919155b2 in __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d5b2)
+    #2 0x557791913376 in std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25b376)
+    #3 0x557791910d7b in std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x258d7b)
+    #4 0x55779190dbbb in void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x255bbb)
+    #5 0x55779190a8b7 in std::vector<int, std::allocator<int> >::push_back(int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2528b7)
+    #6 0x557791907916 in Graph::addEdge(int, int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24f916)
+    #7 0x55779182ead2 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x176ad2)
+    #8 0x7ff5912e3082 in __libc_start_main ../csu/libc-start.c:308
+
+Indirect leak of 8 byte(s) in 1 object(s) allocated from:
+    #0 0x7ff592279587 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cc:104
+    #1 0x5577919155b2 in __gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25d5b2)
+    #2 0x557791913376 in std::allocator_traits<std::allocator<int> >::allocate(std::allocator<int>&, unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x25b376)
+    #3 0x557791910d7b in std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x258d7b)
+    #4 0x55779190dbbb in void std::vector<int, std::allocator<int> >::_M_realloc_insert<int const&>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x255bbb)
+    #5 0x55779190a8b7 in std::vector<int, std::allocator<int> >::push_back(int const&) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x2528b7)
+    #6 0x557791907851 in Graph::addEdge(int, int) (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x24f851)
+    #7 0x55779182ead2 in main (/home/tjandhya/ece650-a2-grading/grading/repositories/t73wang/a2/grade_build/ece650-a2+0x176ad2)
+    #8 0x7ff5912e3082 in __libc_start_main ../csu/libc-start.c:308
+
+SUMMARY: AddressSanitizer: 24168 byte(s) leaked in 4 allocation(s).
+----
+
+Expected result:
+----
+Error: Invalid vertice: 6
+----
+
+Marks: +0	(20 total)
+
+--------------
+Running test: tests_a2/test05.in
+
+# test5.in: expect 1-2-3-4-5
+# marks = 15: 
+
+V 5
+E {<1,2>,<3,2>,<4,5>,<3,4>}
+s 1 5
+Output:
+----
+1-2-3-4-5
+----
+
+Expected result:
+----
+1-2-3-4-5
+----
+Comparison result:	NoneNone
+
+Marks: +15	(35 total)
+
+--------------
+Running test: tests_a2/test06.in
+
+# test6.in: expect 1-3-2-5
+# marks = 20:
+
+V 5
+E {<1,3>,<3,2>,<4,5>,<5,2>}
+s 1 5
+Output:
+----
+1-3-2-5
+----
+
+Expected result:
+----
+1-3-2-5
+----
+Comparison result:	NoneNone
+
+Marks: +20	(55 total)
+
+--------------
+Running test: tests_a2/test07.in
+
+# test7.in: expect 1-4-8-11-13
+# marks = 20: 
+
+V 15
+E {<1,2>,<1,5>,<2,5>,<3,5>,<1,4>,<2,3>,<4,8>,<4,6>,<4,9>,<6,7>,<7,8>,<8,9>,<6,9>,<7,9>,<8,11>,<8,10>,<10,11>,<7,10>,<7,11>,<11,13>,<11,12>,<11,14>,<13,14>,<12,14>,<12,13>}
+s 1 13
+
+Output:
+----
+1-4-8-11-13
+----
+
+Expected result:
+----
+1-4-8-11-13
+----
+Comparison result:	NoneNone
+
+Marks: +20	(75 total)
+
+
+--------------
+
+Finished marking
+Total mark: 75 / 100
+Final mark: 75
